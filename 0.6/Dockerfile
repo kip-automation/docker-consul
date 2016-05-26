@@ -11,7 +11,7 @@ ENV DOCKER_BASE_VERSION=0.0.4
 # Create a consul user and group first so the IDs get set the same way, even as
 # the rest of this may change over time.
 RUN addgroup consul && \
-    adduser -S -G consul consul
+    adduser -u 1000 -g -S -G consul consul
 
 # Set up certificates, our base tools, and Consul.
 RUN apk add --no-cache ca-certificates gnupg && \
